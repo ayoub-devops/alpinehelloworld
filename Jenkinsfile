@@ -1,11 +1,11 @@
 
-peline {
+pipeline {
      environment {
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
-       STAGING = "<prenom>-staging"
-       PRODUCTION = "<prenom>-production"
-       IMAGE_REPO = "<prenom>"
+       STAGING = "ayoub-staging"
+       PRODUCTION = "ayoub-production"
+       IMAGE_REPO = "ayoubmhellioui"
      }
      agent none
      stages {
@@ -51,7 +51,7 @@ peline {
     stage('Push image on dockerhub') {
            agent any 
            environment {
-                DOCKERHUB_LOGIN = credentials('<id de votre credentials dockerhub>')
+                DOCKERHUB_LOGIN = credentials('dockerhub_ayoub')
                 
             }
 
@@ -104,8 +104,3 @@ peline {
      }
   }
 }
-     
-
-        
-        
-pipeline {
